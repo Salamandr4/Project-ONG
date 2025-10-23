@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cadastro — ONG Esperança</title>
+    <meta name="description" content="Cadastre-se como voluntário ou doador na ONG Esperança.">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css"> 
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header role="banner">
+      <div class="container header-inner">
+        <div class="brand" aria-label="ONG Esperança">
+          <img src="assets/favicon.ico" style="height: 40px; margin-right: 0.5rem;">
+          ONG Esperança
+        </div>
+          <nav class="nav" role="navigation" aria-label="Menu principal">
+            <a href="index.html">Início</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="cadastro.html" class="active">Cadastre-se</a>
+          </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-hero" style="padding: 3rem 0; text-align: center; color: white; margin-top: 2rem;">
+      <div class="container">
+        <h1>Cadastro de Voluntário</h1>
+        <p style="opacity: 0.9; max-width: 600px; margin: 0.5rem auto;">
+          Faça parte da transformação social. Cadastre-se como voluntário ou doador e ajude a mudar vidas.
+        </p>
+      </div>
+    </section>
+
+    <!-- Formulário -->
+    <main class="container" role="main" style="padding: 4rem 0;">
+      <form id="cadastroForm" class="bg-card shadow-elegant p-8 rounded-xl" novalidate>
+        <!-- Informações Pessoais -->
+        <fieldset class="space-y-6">
+          <legend style="font-weight: bold; border-bottom: 2px solid hsl(var(--primary)); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+            Informações Pessoais
+          </legend>
+
+          <div class="field">
+            <label for="nomeCompleto">Nome Completo <span class="required">*</span></label>
+            <input id="nomeCompleto" name="nomeCompleto" type="text" required maxlength="100" placeholder="Digite seu nome completo">
+          </div>
+
+          <div class="row two">
+            <div class="field">
+              <label for="email">E-mail <span class="required">*</span></label>
+              <input id="email" name="email" type="email" required maxlength="255" placeholder="seu@email.com">
+            </div>
+            <div class="field">
+              <label for="cpf">CPF <span class="required">*</span></label>
+              <input id="cpf" name="cpf" type="text" inputmode="numeric" required maxlength="14" placeholder="000.000.000-00">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="tipo">Tipo <span class="required">*</span></label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Selecione</option>
+              <option value="voluntario">Voluntário</option>
+              <option value="doador">Doador/Apoiador</option>
+            </select>
+          </div>
+
+          <div class="row two">
+            <div class="field">
+              <label for="telefone">Telefone <span class="required">*</span></label>
+              <input id="telefone" name="telefone" type="tel" required maxlength="15" placeholder="(00) 00000-0000">
+            </div>
+            <div class="field">
+              <label for="dataNascimento">Data de Nascimento <span class="required">*</span></label>
+              <input id="dataNascimento" name="dataNascimento" type="date" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Seção: Endereço -->
+        <fieldset class="space-y-6" style="margin-top: 2rem;">
+          <legend style="font-weight: bold; border-bottom: 2px solid hsl(var(--primary)); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+            Endereço
+          </legend>
+
+          <div class="row three">
+            <div class="field">
+              <label for="cep">CEP <span class="required">*</span></label>
+              <input id="cep" name="cep" type="text" required maxlength="9" placeholder="00000-000">
+            </div>
+            <div class="field" style="grid-column: span 2;">
+              <label for="endereco">Endereço <span class="required">*</span></label>
+              <input id="endereco" name="endereco" type="text" required maxlength="200" placeholder="Rua, número, complemento">
+            </div>
+          </div>
+
+          <div class="row two">
+            <div class="field">
+              <label for="cidade">Cidade <span class="required">*</span></label>
+              <input id="cidade" name="cidade" type="text" required maxlength="100" placeholder="Sua cidade">
+            </div>
+            <div class="field">
+              <label for="estado">Estado <span class="required">*</span></label>
+                <select id="estado" name="estado" required>
+                  <option value="">Selecione</option>
+                  <option value="AC">Acre</option>
+                  <option value="AL">Alagoas</option>
+                  <option value="AP">Amapá</option>
+                  <option value="AM">Amazonas</option>
+                  <option value="BA">Bahia</option>
+                  <option value="CE">Ceará</option>
+                  <option value="DF">Distrito Federal</option>
+                  <option value="ES">Espírito Santo</option>
+                  <option value="GO">Goiás</option>
+                  <option value="MA">Maranhão</option>
+                  <option value="MT">Mato Grosso</option>
+                  <option value="MS">Mato Grosso do Sul</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="PA">Pará</option>
+                  <option value="PB">Paraíba</option>
+                  <option value="PR">Paraná</option>
+                  <option value="PE">Pernambuco</option>
+                  <option value="PI">Piauí</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="RN">Rio Grande do Norte</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="RO">Rondônia</option>
+                  <option value="RR">Roraima</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="SE">Sergipe</option>
+                  <option value="TO">Tocantins</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <button class="primary" type="submit">Cadastrar</button>
+        </div>
+
+        <p class="meta" style="text-align: center; margin-top: 1rem;">
+          Ao enviar este formulário, você concorda em compartilhar suas informações para fins de voluntariado.
+        </p>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo" class="container">
+      <p>© <span id="year"></span> ONG Esperança — Todos os direitos reservados.</p>
+      <p class="meta">Desenvolvido por Vinicius Campacci.</p>
+      <p class="meta">Faculdade Cruzeiro do Sul.</p>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

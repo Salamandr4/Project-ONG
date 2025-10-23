@@ -1,0 +1,426 @@
+/* Todas as cores são HSL para consistência */
+
+@layer base {
+  :root {
+    /* Light Blue Background */
+    --background: 200 100% 95%;
+    --foreground: 220 13% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    /* Green - Hope & Growth */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 142 76% 46%;
+    --primary-dark: 142 76% 26%;
+
+    /* Blue - Trust & Stability */
+    --secondary: 211 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 211 100% 60%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(211 100% 50%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsla(220, 13%, 18%, 0.08);
+    --shadow-md: 0 4px 16px hsla(220, 13%, 18%, 0.12);
+    --shadow-lg: 0 8px 32px hsla(220, 13%, 18%, 0.16);
+    --shadow-accent: 0 8px 32px hsla(142, 76%, 36%, 0.25);
+
+    /* Transitions */
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 220 13% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 13% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 13% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 76% 46%;
+    --primary-foreground: 220 13% 10%;
+    --primary-light: 142 76% 56%;
+    --primary-dark: 142 76% 36%;
+
+    --secondary: 211 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 211 100% 70%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 25 95% 63%;
+    --accent-foreground: 220 13% 10%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142 76% 46%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(211 100% 40%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(220 13% 12%) 0%, hsl(220 13% 14%) 100%);
+    
+    --shadow-sm: 0 2px 8px hsla(0, 0%, 0%, 0.3);
+    --shadow-md: 0 4px 16px hsla(0, 0%, 0%, 0.4);
+    --shadow-lg: 0 8px 32px hsla(0, 0%, 0%, 0.5);
+    --shadow-accent: 0 8px 32px hsla(142, 76%, 46%, 0.3);
+  }
+}
+
+/* Estilos Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+@media (min-width: 768px) {
+  h1 { font-size: 3rem; }
+}
+@media (min-width: 1024px) {
+  h1 { font-size: 3.75rem; }
+}
+
+h2 {
+  font-size: 1.875rem;
+}
+@media (min-width: 768px) {
+  h2 { font-size: 2.25rem; }
+}
+@media (min-width: 1024px) {
+  h2 { font-size: 3rem; }
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  h3 { font-size: 1.875rem; }
+}
+
+/* Utilitários Customizados */
+.gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.gradient-card {
+  background: var(--gradient-card);
+}
+
+.shadow-elegant {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-accent {
+  box-shadow: var(--shadow-accent);
+}
+
+.transition-smooth {
+  transition: var(--transition-smooth);
+}
+
+.bg-card {
+  border-radius: 10px;
+  margin: 5px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bg-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.text-muted-foreground {
+  color: hsl(var(--muted-foreground));
+}
+
+.text-destructive {
+  color: hsl(var(--destructive));
+}
+
+.text-center {
+  text-align: center;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.required {
+  color: hsl(var(--destructive));
+}
+
+.hidden {
+  display: none;
+}
+
+/* Container e Layout Geral */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+header {
+  background: var(--gradient-hero);
+  color: hsl(var(--primary-foreground));
+  padding: 1rem 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.nav a {
+  margin-left: 1rem;
+  color: hsl(var(--primary-foreground));
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main */
+main {
+  padding: 2rem 0;
+  min-height: calc(100vh - 200px); /* Ajuste baseado no header e footer */
+}
+
+/* Formulário */
+form {
+  background: hsl(var(--card));
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  max-width: 800px;
+  margin: 0 auto;
+  transition: var(--transition-base);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 2px solid hsl(var(--primary));
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: hsl(var(--card-foreground));
+}
+
+/* Campos */
+.field {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+}
+
+input, select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid hsl(var(--input));
+  border-radius: var(--radius);
+  font-size: 1rem;
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  transition: var(--transition-base);
+}
+
+input:focus, select:focus {
+  border-color: hsl(var(--ring));
+  outline: none;
+  box-shadow: 0 0 0 2px hsla(var(--ring), 0.25);
+}
+
+small {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+}
+
+/* Grid para Linhas */
+.row.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.row.three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .row.two, .row.three {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Botão */
+.primary {
+  background: var(--gradient-hero);
+  color: hsl(var(--primary-foreground));
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-base);
+  width: 100%;
+  font-weight: bold;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 1rem;
+  border-radius: var(--radius);
+  color: hsl(var(--destructive-foreground));
+  z-index: 1000;
+  max-width: 300px;
+  box-shadow: var(--shadow-lg);
+}
+
+.toast.success {
+  background: hsl(var(--accent));
+}
+
+.toast.error {
+  background: hsl(var(--destructive));
+}
+
+/* Footer */
+footer {
+  background: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+footer img {
+  height: 20px;
+  margin-left: 0.5rem;
+}
+
+/* Fundo do Icone*/
+.icon-bg {
+  width: 70px; 
+  height: 70px;
+  margin: 0 auto 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px; 
+  background: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(211 100% 40%) 100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.icon-bg img {
+  width: 40px; 
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+main.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 0;
+}
+
+#cadastroForm {
+  max-width: 700px;
+  width: 100%;
+}
