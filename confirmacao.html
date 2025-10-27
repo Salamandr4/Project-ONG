@@ -70,6 +70,12 @@
                 <div class="brand" aria-label="ONG Esperança">
                 <img src="assets/favicon.ico"style="height: 40px; margin-right: 0.5rem;">
                 ONG Esperança
+                </div>
+                <!-- Botão de alternar tema -->
+                <button id="toggle-theme" aria-label="Alternar tema" style="background: none; border: none; cursor: pointer;">
+                <div class="icon-bg-dark">
+                <img src="assets/modes.ico" alt="Modo Claro/Escuro" width="24" height="24">
+                </button>
             </header>
 
             <main class="confirmacao-section">
@@ -77,7 +83,7 @@
                     <h1>✅ Cadastro realizado com sucesso!</h1>
                     <p>Dentro de alguns minutos, você receberá um e-mail com a confirmação do seu cadastro.  
                     Agradecemos por fazer parte dessa causa!</p>
-                    <a href="index.html" class="primary" >Voltar à Página Inicial</a>
+                    <a href="index.html" class="primary">Voltar à Página Inicial</a>
                 </div>
             </main>
 
@@ -87,5 +93,42 @@
             <p class="meta">Desenvolvido por Vinicius Campacci.</p>
             <p class="meta">Faculdade Cruzeiro do Sul.</p>
             </footer>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                const toggleBtn = document.getElementById("toggle-theme");
+                const gradient = document.getElementById("gradient-bg");
+                const heroImage = document.querySelector(".hero-image");
+
+                function updateGradient() {
+                    const isDark = document.body.classList.contains("dark-mode");
+
+                    if (isDark) {
+                    gradient.style.background = `linear-gradient(
+                        to right,
+                        hsla(210, 30%, 5%, 0.9),
+                        hsla(210, 30%, 5%, 0.75),
+                        hsla(210, 30%, 5%, 0.6)
+                    )`;
+                    heroImage.style.opacity = "0.4";
+                    } else {
+                    gradient.style.background = `linear-gradient(
+                        to right,
+                        hsla(200, 100%, 95%, 0.95),
+                        hsla(200, 100%, 95%, 0.8),
+                        hsla(200, 100%, 95%, 0.6)
+                    )`;
+                    heroImage.style.opacity = "1";
+                    }
+                }
+
+                toggleBtn.addEventListener("click", () => {
+                    document.body.classList.toggle("dark-mode");
+                    updateGradient();
+                });
+
+                updateGradient();
+                });
+            </script>
         </body>
 </html>
